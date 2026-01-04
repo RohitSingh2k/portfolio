@@ -89,13 +89,7 @@ function renderContent(config) {
         document.getElementById('contact-email').href = `mailto:${config.profile.email}`;
     }
 
-    // Contact Form Logic
-    // Contact Form Logic
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm && config.profile.email) {
-        // Set action dynamically to avoid hardcoding or needing config at HTML build time
-        contactForm.action = `https://formsubmit.co/${config.profile.email}`;
-    }  // Socials (Hero & Footer)
+    // Socials (Hero & Footer)
     const heroSocials = document.getElementById('hero-socials');
     const footerSocials = document.getElementById('footer-socials');
 
