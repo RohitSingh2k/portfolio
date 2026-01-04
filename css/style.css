@@ -1,0 +1,130 @@
+/* Basic reset and imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+/* Initial Fade-in Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(40px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Hero Section with Background for Ripple Effect */
+#home {
+    background-image: url('https://images.unsplash.com/photo-1494959764136-6be9eb3c261e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Ensure text remains readable over the image */
+    position: relative;
+}
+
+/* Optional: Add a light overlay to ensure text contrast if needed, 
+   since the ripple effect works on the background image */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.85);
+    /* 85% opacity white overlay */
+    z-index: 0;
+    pointer-events: none;
+    /* Allow clicks to pass through to the ripple/links */
+}
+
+/* Ensure content sits above the overlay */
+#home>div {
+    position: relative;
+    z-index: 1;
+}
+
+/* Timeline/Experience for Desktop */
+@media (min-width: 768px) {
+    #experience-container::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: #e2e8f0;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+        z-index: 0;
+    }
+
+    /* Remove the mobile-only line */
+    #experience-container>div.absolute {
+        display: none;
+    }
+}
+/* Hindi Font Adjustments */
+:lang(hi) {
+    line-height: 1.6;
+}
+
+:lang(hi) h1,
+:lang(hi) h2,
+:lang(hi) h3 {
+    line-height: 1.4;
+    padding-top: 5px;
+}
