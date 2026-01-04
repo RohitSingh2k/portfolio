@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     updateYear();
 });
 
-let commonConfig = null; // Store common config globally
+let commonConfig = null;
 
 async function loadLanguage(lang) {
     try {
-        // First time load common config
+
         if (!commonConfig) {
             const commonRes = await fetch('config.json');
             if (!commonRes.ok) throw new Error('Failed to load config.json');
@@ -22,8 +22,6 @@ async function loadLanguage(lang) {
         }
         const langConfig = await response.json();
 
-        // Merge: spread common first, then lang. 
-        // Profile needs deep merge to keep email/img from common and name/bio from lang
         const config = {
             ...commonConfig,
             ...langConfig,
@@ -68,8 +66,7 @@ window.switchLanguage = function (lang) {
 }
 
 function renderContent(config) {
-    // Profile
-    // Profile
+
     // Start typing effect sequentially
     const nameEl = document.getElementById('hero-name');
     const roleEl = document.getElementById('hero-role');
@@ -151,9 +148,6 @@ function renderContent(config) {
 
         item.className = `relative z-10`;
 
-        // We use a simpler stacked layout for mobile and a alternating one for desktop via CSS grid or flex
-        // But for simplicity with the current CSS setup, let's inject a card
-
         const content = `
             <div class="relative w-full z-10">
                 <!-- Timeline Dot -->
@@ -174,9 +168,8 @@ function renderContent(config) {
             </div>
         `;
 
-        // Note: The CSS .timeline-item handles the positioning (left/right) on desktop
         item.innerHTML = content;
-        // We append the inner HTML directly to container to avoid extra wrapper issues with the CSS selectors
+
         experienceContainer.innerHTML += content;
     });
 
