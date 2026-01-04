@@ -90,25 +90,11 @@ function renderContent(config) {
     }
 
     // Contact Form Logic
+    // Contact Form Logic
     const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        // Remove existing listener to prevent duplicates on language switch
-        const newForm = contactForm.cloneNode(true);
-        contactForm.parentNode.replaceChild(newForm, contactForm);
-
-        newForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(newForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-
-            const subject = `Portfolio Contact from ${name}`;
-            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-
-            const mailtoLink = `mailto:${config.profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-        });
+    if (contactForm && config.profile.email) {
+        // Set action dynamically to avoid hardcoding or needing config at HTML build time
+        contactForm.action = `https://formsubmit.co/${config.profile.email}`;
     }  // Socials (Hero & Footer)
     const heroSocials = document.getElementById('hero-socials');
     const footerSocials = document.getElementById('footer-socials');
@@ -166,6 +152,8 @@ function renderContent(config) {
         const alignmentClass = index % 2 === 0 ? 'md:flex-row-reverse' : '';
         const textAlignment = index % 2 === 0 ? 'md:text-right' : 'md:text-left';
         const marginClass = index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto';
+        // Add padding to the side facing the timeline (center)
+        const desktopPaddingClass = index % 2 === 0 ? 'md:pr-12' : 'md:pl-12';
 
         item.className = `relative z-10`;
 
@@ -175,9 +163,9 @@ function renderContent(config) {
         const content = `
             <div class="relative w-full z-10">
                 <!-- Timeline Dot -->
-                <div class="absolute top-8 left-7 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-slate-50 z-20"></div>
+                <div class="absolute top-8 left-1 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-slate-50 z-20"></div>
                 
-                <div class="timeline-item mb-8 w-full md:w-1/2 ${marginClass} box-border">
+                <div class="timeline-item mb-8 w-full md:w-1/2 ${marginClass} box-border pl-12 ${desktopPaddingClass}">
                     <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-slate-100">
                         <span class="inline-block px-3 py-1 mb-2 text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-50 rounded-full">
                             ${exp.period}
