@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Rohit Singh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+  <script type="module" crossorigin src="/portfolio/assets/main-a088IceD.js"></script>
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/main-BfRsmiTX.css">
+</head>
+
+<body class="bg-slate-50 font-sans min-h-screen flex flex-col">
+
+    <nav class="bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary tracking-tight">RS.</a>
+                </div>
+                <div>
+                    <a href="index.html" class="text-slate-600 hover:text-primary font-medium transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> <span data-i18n="resume_back_home">Back to Home</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 py-12 flex flex-col items-center justify-center">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4" data-i18n="resume_page_title">Resume</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto" data-i18n="resume_page_desc">
+                View or download my resume to learn more about my experience and skills.
+            </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full text-center">
+            <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-file-pdf text-3xl text-primary"></i>
+            </div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">Rohit Singh - <span
+                    data-i18n="resume_page_title">Resume</span></h2>
+            <p class="text-slate-500 mb-8" data-i18n="resume_pdf_format">PDF Format</p>
+
+            <a href="assets/docs/resume.pdf" download
+                class="block w-full bg-primary text-white font-bold py-4 px-6 rounded-xl hover:bg-secondary transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 mb-4">
+                <i class="fas fa-download mr-2"></i> <span data-i18n="resume_download_btn">Download Resume</span>
+            </a>
+
+            <p class="text-sm text-slate-400 mt-6">
+                <span data-i18n="resume_contact_prompt">Looking for something specific?</span> <a
+                    href="index.html#contact" class="text-primary hover:underline"
+                    data-i18n="resume_contact_link">Contact me directly</a>.
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-400 text-sm">
+            &copy;
+            <span id="year"></span> Rohit Singh. <span data-i18n="footer_rights">All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>
