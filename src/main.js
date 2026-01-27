@@ -1,3 +1,5 @@
+import './style.css';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Default language
     loadLanguage('en');
@@ -11,12 +13,12 @@ async function loadLanguage(lang) {
     try {
 
         if (!commonConfig) {
-            const commonRes = await fetch('config.json');
+            const commonRes = await fetch('/config.json');
             if (!commonRes.ok) throw new Error('Failed to load config.json');
             commonConfig = await commonRes.json();
         }
 
-        const response = await fetch(`assets/i18n/${lang}.json`);
+        const response = await fetch(`/assets/i18n/${lang}.json`);
         if (!response.ok) {
             throw new Error(`Failed to load language: ${lang}`);
         }
