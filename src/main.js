@@ -8,17 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let commonConfig = null;
+let currentConfig = null;
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 async function loadLanguage(lang) {
     try {
-
         if (!commonConfig) {
-            const commonRes = await fetch('/config.json');
+            const commonRes = await fetch(`${BASE_URL}config.json`);
             if (!commonRes.ok) throw new Error('Failed to load config.json');
             commonConfig = await commonRes.json();
         }
 
-        const response = await fetch(`/assets/i18n/${lang}.json`);
+        const response = await fetch(`${BASE_URL}assets/i18n/${lang}.json`);
         if (!response.ok) {
             throw new Error(`Failed to load language: ${lang}`);
         }
