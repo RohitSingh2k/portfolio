@@ -13,13 +13,16 @@ export function setupContactForm() {
         submitBtn.disabled = true;
 
         const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
 
         fetch(form.action, {
             method: 'POST',
-            body: formData,
             headers: {
+                'Content-Type': 'application/json',
                 'Accept': 'application/json'
-            }
+            },
+            body: json
         })
             .then(response => {
                 if (response.ok) {
