@@ -52,7 +52,7 @@ export function renderContent(config) {
         skillIcons[skill.name.toLowerCase()] = skill.icon;
 
         const div = document.createElement('div');
-        div.className = 'flex items-center gap-2 px-4 py-2 bg-slate-50 text-slate-700 rounded-full text-sm font-medium hover:bg-white hover:text-primary transition-all border border-slate-200 shadow-sm hover:shadow-md cursor-default';
+        div.className = 'flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium hover:bg-white dark:hover:bg-slate-700 hover:text-primary transition-all border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md cursor-default';
 
         // Handle both Devicon and FontAwesome
         const iconClass = skill.icon || 'fas fa-code';
@@ -86,16 +86,16 @@ export function renderContent(config) {
         const content = `
             <div class="relative w-full z-10">
                 <!-- Timeline Dot -->
-                <div class="absolute top-8 left-1 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-slate-50 z-20"></div>
+                <div class="absolute top-8 left-1 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-slate-50 dark:border-slate-800 z-20"></div>
                 
                 <div class="timeline-item mb-8 w-full md:w-1/2 ${marginClass} box-border pl-12 ${desktopPaddingClass}">
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-slate-100">
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-700">
                         <span class="inline-block px-3 py-1 mb-2 text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-50 rounded-full">
                             ${exp.period}
                         </span>
-                        <h3 class="text-xl font-bold text-slate-900">${exp.role}</h3>
-                        <h4 class="text-lg font-medium text-slate-600 mb-4">${exp.company}</h4>
-                        <p class="text-slate-500 leading-relaxed">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">${exp.role}</h3>
+                        <h4 class="text-lg font-medium text-slate-600 dark:text-slate-300 mb-4">${exp.company}</h4>
+                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
                             ${exp.description}
                         </p>
                     </div>
@@ -133,7 +133,7 @@ export function renderContent(config) {
                 // Simple heuristic: if icon starts with 'devicon', it's colored. if 'fas', it's generic.
 
                 return `
-                    <div class="flex items-center gap-1.5 px-2.5 py-1 bg-white border border-slate-200 rounded-md text-xs font-medium text-slate-600">
+                    <div class="flex items-center gap-1.5 px-2.5 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-md text-xs font-medium text-slate-600 dark:text-slate-300">
                         <i class="${icon}"></i>
                         <span>${techName}</span>
                     </div>
@@ -141,27 +141,27 @@ export function renderContent(config) {
             }).join('');
 
             const projectCard = `
-                <div class="bg-slate-50 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100 flex flex-col fade-in-up ${delayClass}">
+                <div class="bg-slate-50 dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100 dark:border-slate-700 flex flex-col fade-in-up ${delayClass}">
                     <div class="p-6 flex-grow">
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-slate-900">${project.title}</h3>
-                            <div class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-blue-200">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">${project.title}</h3>
+                            <div class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded border border-blue-200 dark:border-blue-800">
                                 Project
                             </div>
                         </div>
-                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                        <p class="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
                             ${project.description}
                         </p>
                         
                         <div class="mb-4">
-                            <h4 class="text-sm font-semibold text-slate-900 mb-2 uppercase tracking-wider">${config.ui.projects_responsibilities || 'Responsibilities'}</h4>
-                            <ul class="text-sm text-slate-500">
+                            <h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-2 uppercase tracking-wider">${config.ui.projects_responsibilities || 'Responsibilities'}</h4>
+                            <ul class="text-sm text-slate-500 dark:text-slate-400">
                                 ${responsibilitiesList}
                             </ul>
                         </div>
                     </div>
-                    <div class="bg-slate-100 px-6 py-4 border-t border-slate-200">
-                        <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">${config.ui.projects_techstack || 'Tech Stack'}</h4>
+                    <div class="bg-slate-100 dark:bg-slate-900/50 px-6 py-4 border-t border-slate-200 dark:border-slate-700">
+                        <h4 class="text-xs font-semibold text-slate-500 dark:text-slate-500 uppercase tracking-wider mb-3">${config.ui.projects_techstack || 'Tech Stack'}</h4>
                         <div class="flex flex-wrap gap-2">
                             ${techStackHtml}
                         </div>
