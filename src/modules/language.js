@@ -44,7 +44,7 @@ export async function loadLanguage(lang) {
         // Update Language Switcher Label
         const langLabel = document.getElementById('current-lang-label');
         if (langLabel) {
-            langLabel.textContent = lang === 'en' ? 'EN' : 'HI';
+            langLabel.textContent = lang.toUpperCase();
         }
 
         // Render Dynamic Content
@@ -57,6 +57,7 @@ export async function loadLanguage(lang) {
 
 // Expose to window for HTML onclick events
 window.switchLanguage = function (lang) {
+    localStorage.setItem('preferredLanguage', lang);
     loadLanguage(lang);
     // Close mobile menu if open
     const mobileMenu = document.getElementById('mobile-menu');

@@ -8,7 +8,8 @@ import { setupContactForm } from './modules/contact-form.js';
 document.addEventListener('DOMContentLoaded', () => {
     // Default language
     initTheme();
-    loadLanguage('en');
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    loadLanguage(savedLang);
     setupMobileMenu();
     updateYear();
     setupContactForm();
