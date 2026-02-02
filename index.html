@@ -30,7 +30,7 @@
     }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/portfolio/assets/main-BoqFogWP.js"></script>
+  <script type="module" crossorigin src="/portfolio/assets/main-DPL4BIzk.js"></script>
   <link rel="stylesheet" crossorigin href="/portfolio/assets/main-BHMlZYGn.css">
 </head>
 
@@ -69,21 +69,41 @@
             </button>
 
             <!-- Language Switcher -->
+            <!-- Language Switcher -->
             <div class="relative inline-block text-left ml-2 group">
               <button type="button"
                 class="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-slate-600 shadow-sm px-3 py-1.5 bg-white dark:bg-slate-800 text-sm font-medium text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-700 focus:outline-none">
                 <i class="fas fa-globe mr-2 text-primary"></i> <span id="current-lang-label">EN</span>
                 <i class="fas fa-chevron-down ml-2 -mr-1 text-xs"></i>
               </button>
-              <div
-                class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white dark:bg-slate-800 ring-1 ring-black ring-opacity-5 focus:outline-none hidden group-hover:block z-50">
-                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                  <button onclick="switchLanguage('en')"
-                    class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white"
-                    role="menuitem">English</button>
-                  <button onclick="switchLanguage('hi')"
-                    class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white"
-                    role="menuitem">हिन्दी (Hindi)</button>
+
+              <!-- Dropdown Menu -->
+              <div class="origin-top-right absolute right-0 top-full pt-2 w-48 hidden group-hover:block z-50">
+                <div
+                  class="rounded-md shadow-lg bg-white dark:bg-slate-800 ring-1 ring-black ring-opacity-5 focus:outline-none overflow-hidden">
+                  <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                    <button onclick="switchLanguage('en')"
+                      class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white"
+                      role="menuitem">English</button>
+                    <button onclick="switchLanguage('hi')"
+                      class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white"
+                      role="menuitem">हिन्दी (Hindi)</button>
+                    <button onclick="switchLanguage('bn')"
+                      class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white"
+                      role="menuitem">বাংলা (Bengali)</button>
+                    <button onclick="switchLanguage('es')"
+                      class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white"
+                      role="menuitem">Español (Spanish)</button>
+                    <button onclick="switchLanguage('mr')"
+                      class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white"
+                      role="menuitem">मराठी (Marathi)</button>
+                    <button onclick="switchLanguage('ta')"
+                      class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white"
+                      role="menuitem">தமிழ் (Tamil)</button>
+                    <button onclick="switchLanguage('kn')"
+                      class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white"
+                      role="menuitem">ಕನ್ನಡ (Kannada)</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -130,6 +150,16 @@
             class="text-sm font-medium text-slate-600 mr-4 hover:text-primary">English</button>
           <button onclick="switchLanguage('hi')"
             class="text-sm font-medium text-slate-600 hover:text-primary">हिन्दी</button>
+          <button onclick="switchLanguage('bn')"
+            class="text-sm font-medium text-slate-600 mr-4 hover:text-primary">বাংলা</button>
+          <button onclick="switchLanguage('es')"
+            class="text-sm font-medium text-slate-600 mr-4 hover:text-primary">Español</button>
+          <button onclick="switchLanguage('mr')"
+            class="text-sm font-medium text-slate-600 mr-4 hover:text-primary">मराठी</button>
+          <button onclick="switchLanguage('ta')"
+            class="text-sm font-medium text-slate-600 mr-4 hover:text-primary">தமிழ்</button>
+          <button onclick="switchLanguage('kn')"
+            class="text-sm font-medium text-slate-600 hover:text-primary">ಕನ್ನಡ</button>
         </div>
       </div>
     </div>

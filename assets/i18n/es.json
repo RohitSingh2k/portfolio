@@ -1,0 +1,98 @@
+{
+    "ui": {
+        "nav_home": "Inicio",
+        "nav_about": "Sobre mí",
+        "nav_experience": "Experiencia",
+        "nav_contact": "Contacto",
+        "nav_projects": "Proyectos",
+        "nav_resume": "Currículum",
+        "hero_available": "Disponible para nuevos proyectos",
+        "hero_contact": "Contáctame",
+        "hero_work": "Ver Trabajo",
+        "about_heading": "Sobre Mí",
+        "about_subheading": "Apasionado por la tecnología",
+        "about_techstack": "Tecnologías",
+        "experience_heading": "Experiencia",
+        "experience_subheading": "Mi Trayectoria Profesional",
+        "projects_heading": "Proyectos",
+        "projects_subheading": "Trabajos Destacados",
+        "projects_text": "Una selección de proyectos que demuestran mi experiencia en desarrollo backend y arquitectura de sistemas.",
+        "projects_responsibilities": "Responsabilidades",
+        "projects_techstack": "Tecnologías",
+        "contact_heading": "Ponte en Contacto",
+        "contact_text": "Actualmente estoy abierto a nuevas oportunidades. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible por responderte!",
+        "contact_button": "Di Hola",
+        "footer_rights": "Todos los derechos reservados.",
+        "form_name": "Nombre",
+        "form_email": "Correo",
+        "form_message": "Mensaje",
+        "form_submit": "Enviar Mensaje",
+        "resume_page_title": "Currículum",
+        "resume_page_desc": "Vea o descargue mi currículum para saber más sobre mi experiencia y habilidades.",
+        "resume_pdf_format": "Formato PDF",
+        "resume_download_btn": "Descargar Currículum",
+        "resume_back_home": "Volver al Inicio",
+        "resume_contact_prompt": "¿Buscas algo específico?",
+        "resume_contact_link": "Contáctame directamente"
+    },
+    "profile": {
+        "name": "Rohit Singh",
+        "role": "Desarrollador de Software Senior",
+        "tagline": "Construyendo soluciones escalables con tecnologías modernas.",
+        "bio": "Un desarrollador de software experimentado con más de 6 años de experiencia en tecnologías backend como Spring, Spring Boot, Spring Data JPA, Node.js y Express.js, junto con dominio en tecnologías frontend incluyendo React, Bootstrap y jQuery. Experto en trabajar con diversos clientes en varias industrias, especializándose en gestión de proyectos, desarrollo de API, optimización e integración de servicios de terceros. Experto en implementar soluciones seguras, escalables y eficientes utilizando una combinación de tecnologías de código abierto y propietarias."
+    },
+    "experience": [
+        {
+            "company": "Aloha Technology Pvt. Ltd.",
+            "role": "Desarrollador de Software Senior",
+            "period": "Presente",
+            "description": "Trabajando en la construcción de UI usando React y Svelte, y desarrollando servicios backend usando Spring Boot. Experiencia práctica con varios servicios de AWS principalmente S3, EC2, Kafka y RDBMS."
+        },
+        {
+            "company": "Vara Technology Pvt. Ltd.",
+            "role": "Desarrollador de Blockchain Privada y UI",
+            "period": "Pasado",
+            "description": "Comencé como desarrollador de blockchain privada y UI usando Hyperledger Fabric, Golang y Go-Gin. Construí interfaces de usuario usando React."
+        }
+    ],
+    "projects": [
+        {
+            "title": "Sistema de Facturación y Calificación Logística",
+            "tech": "Java, Spring, Spring Boot, Spring Data JPA, iTextPDF, AWS",
+            "description": "Destinado a agilizar el proceso de facturación y calificación para clientes en la industria logística. Envíos generados para tipos de carga TL y LTL, API de facturación y calificación dinámicas, y facturas personalizadas utilizando iTextPDF. Servicios de AWS integrados como RDS, DynamoDB, S3, SMS y SNS.",
+            "responsibilities": [
+                "Desarrollé API de facturación y calificación dinámicas utilizando Java y el framework Spring.",
+                "Integré iTextPDF para generar facturas personalizadas.",
+                "Optimicé el servicio de calificación existente implementando multithreading y CompletableFuture, resultando en una disminución del 30% en el tiempo de respuesta.",
+                "Aseguré las API utilizando Spring Security.",
+                "Integré y utilicé varios servicios de AWS como RDS, DynamoDB, S3, SMS y SNS.",
+                "Diseñé e implementé servicios basados en eventos con procedimientos y consumidores."
+            ]
+        },
+        {
+            "title": "Plataforma Digital de Autoservicio",
+            "tech": "Java, Spring Boot, Launch4j, React, jQuery, Docker, Swagger",
+            "description": "Proporcionó a los usuarios una experiencia de autoservicio consistente y rápida en varias plataformas. Incluyó creación de pagos recurrentes, notificaciones automatizadas, tareas por lotes y procesamiento de firmas digitales. Usó Java y Spring Boot para SDKs y React/jQuery para UI.",
+            "responsibilities": [
+                "Desarrollé SDKs ejecutables multiplataforma para la configuración de bases de datos utilizando Java y Spring y launch4J.",
+                "Creé trabajos de procesamiento por lotes para tareas automatizadas.",
+                "Integré el proveedor de notificaciones Precisely para notificaciones automatizadas.",
+                "Desarrollé y mantuve componentes de UI utilizando React, jQuery y pila tecnológica interna.",
+                "Utilicé Docker para crear contenedores desplegables.",
+                "Gestioné la configuración de API Swagger contract-first para varios servicios."
+            ]
+        },
+        {
+            "title": "Plataforma de Seminarios Web",
+            "tech": "Java, Spring Boot, Express.js, Sequelize ORM",
+            "description": "Facilitó una comunicación fluida entre anfitriones y participantes. Involucró la creación de notificaciones de correo electrónico personalizables automatizadas, programadores de trabajo para procesamiento de correo por lotes y un módulo de compresión de video.",
+            "responsibilities": [
+                "Implementé notificaciones de correo electrónico personalizables automatizadas utilizando Java y Spring Boot.",
+                "Desarrollé diferentes programadores de trabajo para procesamiento de correo por lotes.",
+                "Creé API utilizando Express.js y Sequelize ORM para una gestión de datos eficiente.",
+                "Integré un módulo de compresión de video para transcodificar videos en varios formatos y tamaños.",
+                "Implementé transmisión para renderizado rápido de video en servidores."
+            ]
+        }
+    ]
+}
