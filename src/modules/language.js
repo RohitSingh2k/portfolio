@@ -1,4 +1,5 @@
 import { renderContent } from './ui.js';
+import { closeMobileMenu } from './mobile-menu.js';
 
 let commonConfig = null;
 let currentConfig = null;
@@ -47,6 +48,18 @@ export async function loadLanguage(lang) {
             langLabel.textContent = lang.toUpperCase();
         }
 
+        // Update Active State in Mobile Menu & Dropdown
+        document.querySelectorAll('[onclick^="switchLanguage"]').forEach(btn => {
+            const btnLang = btn.getAttribute('onclick').match(/'(\w+)'/)[1];
+            if (btnLang === lang) {
+                btn.classList.add('bg-primary', 'text-white');
+                btn.classList.remove('text-gray-700', 'dark:text-slate-200', 'text-slate-600');
+            } else {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('text-slate-600', 'dark:text-slate-200');
+            }
+        });
+
         // Render Dynamic Content
         renderContent(config);
 
@@ -55,13 +68,11 @@ export async function loadLanguage(lang) {
     }
 }
 
+
+
 // Expose to window for HTML onclick events
 window.switchLanguage = function (lang) {
     localStorage.setItem('preferredLanguage', lang);
     loadLanguage(lang);
-    // Close mobile menu if open
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu) {
-        mobileMenu.classList.add('hidden');
-    }
+    closeMobileMenu();
 }

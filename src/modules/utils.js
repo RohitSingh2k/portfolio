@@ -14,6 +14,11 @@ export function updateYear() {
  */
 export function typeText(element, text, speed = 50) {
     return new Promise((resolve) => {
+        if (!element || !text) {
+            resolve();
+            return;
+        }
+
         let i = 0;
         element.textContent = '';
 

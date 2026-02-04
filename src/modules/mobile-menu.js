@@ -1,3 +1,17 @@
+export function closeMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu && !menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+        const icon = btn.querySelector('i');
+        if (icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    }
+}
+
 export function setupMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
@@ -5,9 +19,10 @@ export function setupMobileMenu() {
     if (!btn || !menu) return;
 
     btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
+        const isHidden = menu.classList.toggle('hidden');
         const icon = btn.querySelector('i');
-        if (menu.classList.contains('hidden')) {
+
+        if (isHidden) {
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         } else {
@@ -19,9 +34,7 @@ export function setupMobileMenu() {
     // Close menu when clicking a link
     menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            menu.classList.add('hidden');
-            btn.querySelector('i').classList.remove('fa-times');
-            btn.querySelector('i').classList.add('fa-bars');
+            closeMobileMenu();
         });
     });
 }

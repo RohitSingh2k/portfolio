@@ -2,23 +2,47 @@ import { typeText } from './utils.js';
 
 export function renderContent(config) {
 
+    // Initialize Ripples first (so UI crash doesn't stop it)
+    try {
+        if (window.jQuery && window.jQuery().ripples) {
+            $('#home').ripples({
+                resolution: 512,
+                dropRadius: 20,
+                perturbance: 0.04,
+            });
+        }
+    } catch (e) {
+        console.warn('Ripples library not loaded or failed to initialize', e);
+    }
+
     // Start typing effect sequentially
     const nameEl = document.getElementById('hero-name');
     const roleEl = document.getElementById('hero-role');
     const taglineEl = document.getElementById('hero-tagline');
 
-    // Clear initial content
-    nameEl.textContent = '';
-    roleEl.textContent = '';
-    taglineEl.textContent = '';
+    // Only run if we have data to type
+    if (config.profile && config.profile.name) {
+        // Clear initial content only if we are about to type new content
+        if (nameEl) nameEl.textContent = '';
+        if (roleEl) roleEl.textContent = '';
+        if (taglineEl) taglineEl.textContent = '';
 
-    typeText(nameEl, config.profile.name, 100)
-        .then(() => typeText(roleEl, config.profile.role, 50))
-        .then(() => typeText(taglineEl, config.profile.tagline, 30));
-    document.getElementById('hero-image').src = config.profile.dpPath;
-    document.getElementById('about-bio').innerHTML = `<p>${config.profile.bio}</p>`;
-    if (document.getElementById('contact-email')) {
-        document.getElementById('contact-email').href = `mailto:${config.profile.email}`;
+        typeText(nameEl, config.profile.name, 100)
+            .then(() => typeText(roleEl, config.profile.role, 50))
+            .then(() => typeText(taglineEl, config.profile.tagline, 30));
+    }
+
+    if (config.profile) {
+        const heroImg = document.getElementById('hero-image');
+        if (heroImg && config.profile.dpPath) heroImg.src = config.profile.dpPath;
+
+        const aboutBio = document.getElementById('about-bio');
+        if (aboutBio && config.profile.bio) aboutBio.innerHTML = `<p>${config.profile.bio}</p>`;
+
+        const contactEmail = document.getElementById('contact-email');
+        if (contactEmail && config.profile.email) {
+            contactEmail.href = `mailto:${config.profile.email}`;
+        }
     }
 
     // Socials (Hero & Footer)
@@ -172,16 +196,5 @@ export function renderContent(config) {
         });
     }
 
-    // Initialize Ripples
-    try {
-        if (window.jQuery && window.jQuery().ripples) {
-            $('#home').ripples({
-                resolution: 512,
-                dropRadius: 20,
-                perturbance: 0.04,
-            });
-        }
-    } catch (e) {
-        console.warn('Ripples library not loaded or failed to initialize');
-    }
+
 }
